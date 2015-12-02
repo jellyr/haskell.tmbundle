@@ -511,41 +511,22 @@
 		<dict>
 			<key>patterns</key>
 			<array>
-				<dict>
-					<key>begin</key>
-					<string>(^[ \t]+)?(?=--+((?![\p{S}\p{P}])|[(),;\[\]`{}_"']))</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.whitespace.comment.leading.haskell</string>
-						</dict>
-					</dict>
-					<key>comment</key>
-					<string>Operators may begin with '--' as long as they are not entirely composed of '-' characters. This means comments can't be immediately followed by an allowable operator character.</string>
-					<key>end</key>
-					<string>(?!\G)</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>begin</key>
-							<string>--</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>0</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.definition.comment.haskell</string>
-								</dict>
-							</dict>
-							<key>end</key>
-							<string>\n</string>
-							<key>name</key>
-							<string>comment.line.double-dash.haskell</string>
-						</dict>
-					</array>
-				</dict>
+        <dict>
+          <key>begin</key>
+          <string>--</string>
+          <key>beginCaptures</key>
+          <dict>
+            <key>0</key>
+            <dict>
+              <key>name</key>
+              <string>punctuation.definition.comment.haskell</string>
+            </dict>
+          </dict>
+          <key>end</key>
+          <string>\n</string>
+          <key>name</key>
+          <string>comment.line.double-dash.haskell</string>
+        </dict>
 				<dict>
 					<key>include</key>
 					<string>#block_comment</string>
